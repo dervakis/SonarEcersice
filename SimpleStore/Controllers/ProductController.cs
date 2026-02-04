@@ -61,15 +61,23 @@ namespace SimpleStore.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            await productService.DeleteProduct(id);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {    
+                await productService.DeleteProduct(id);
+                return RedirectToAction("Index");
+            }
+            return View();
         }
 
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            var product = await productService.GetProductById(id);
-            return View(product);
+            if (ModelState.IsValid)
+            {   
+                var product = await productService.GetProductById(id);
+                return View(product);
+            }
+            return View();
         }
 
         [HttpPost]
