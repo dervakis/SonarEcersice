@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Product Inventory";
+}
+@model List<SimpleStore.Model.Product>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Inventory</h1>
+    @* <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
+
+    <table id="productTable">
+        <tr>
+            <th>
+                Product Id
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @if(Model!=null)
+        {
+            @foreach(var p in Model)
+            {
+            <tr>
+                <td>@p.ProductId</td>
+                    <td>@p.ProductName</td>
+                    <td>@p.Quantity</td>
+                    <td>@p.Category.ToString()</td>
+                    <td>
+                        <form asp-action="Delete" asp-controller="Product" method="post">
+                            <input type="hidden" name="id" value="@p.ProductId"/>
+                            <button type="submit">Delete</button>
+                        </form>
+                        <a asp-action="Update" asp-controller="Product" asp-route-id="@p.ProductId">Edit</a>
+                    </td>
+            </tr>  
+           }
+        }
+    </table>
+</div>

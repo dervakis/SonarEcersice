@@ -1,0 +1,14 @@
+﻿@model SimpleStore.Model.Product
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.ProductName</h5>
+        <p class="card-text">Category : @Model.Category</p>
+        <p class="card-text">Quantity : @Model.Quantity</p>
+        <form asp-action="Delete" asp-controller="Product" method="post">
+            <input type="hidden" name="id" value="@Model.ProductId" />
+            <button type="submit">Delete</button>
+        </form>
+        <a asp-action="Update" asp-controller="Product" asp-route-id="@Model.ProductId">Edit</a>
+    </div>
+</div>

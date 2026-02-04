@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SimpleStore.Model/SimpleStore.Model.csproj" />
+  <Project Path="SimpleStore.Repository/SimpleStore.Repository.csproj" />
+  <Project Path="SimpleStore.Service/SimpleStore.Service.csproj" />
+  <Project Path="SimpleStore/SimpleStore.csproj" />
+</Solution>
