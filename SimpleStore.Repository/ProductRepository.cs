@@ -19,7 +19,8 @@ namespace SimpleStore.Repository
         public async Task<Product> AddProductAsync(Product product)
         {
            await _con.Products.AddAsync(product);
-            return product;
+            await _con.SaveChangesAsync();
+           return product;
         }
 
         public async Task DeleteProductAsync(int id)
@@ -50,7 +51,7 @@ namespace SimpleStore.Repository
             oldProduct.ProductName = product.ProductName;
             oldProduct.Quantity = product.Quantity;
             oldProduct.Category = product.Category;
-             _con.SaveChangesAsync();
+            await _con.SaveChangesAsync();
         }
         public async Task<int> ProductCount()
         {

@@ -14,13 +14,6 @@ namespace SimpleStore.Service
         {
             this.productRepository = productRepository;
         }
-
-//threr commet issue
-
-// public async Task<Product> CreateProduct(Product product) 
-//         {
-//             if (product.Quantity < 0)
-//                 throw new Inv
         public async Task<Product> CreateProduct(Product product) 
         {
             if (product.Quantity < 0)
@@ -38,7 +31,7 @@ namespace SimpleStore.Service
         }
         public async Task DeleteProduct(int id)
         {
-           productRepository.DeleteProductAsync(id);
+           await productRepository.DeleteProductAsync(id);
         }
 
         public async Task UpdateProduct(Product product)
