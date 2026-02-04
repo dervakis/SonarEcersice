@@ -60,8 +60,8 @@ namespace SimpleStore.Repository
             {
                 using (SqlCommand cmd = new SqlCommand("select count(*) from Products", con)) 
                 {
-                    con.Open();
-                    count = (int)cmd.ExecuteScalar();
+                    await con.OpenAsync();
+                    count =(int) await cmd.ExecuteScalarAsync();
                 }
             }
             return count;

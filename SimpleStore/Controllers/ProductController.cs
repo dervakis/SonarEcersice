@@ -15,10 +15,6 @@ namespace SimpleStore.Controllers
             this.productService = productService;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
         public async override void OnActionExecuting(ActionExecutingContext context)
         {
             ViewBag.ProductCount = await productService.GetProductCount();
