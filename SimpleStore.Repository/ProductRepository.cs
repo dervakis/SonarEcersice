@@ -50,7 +50,7 @@ namespace SimpleStore.Repository
             oldProduct.ProductName = product.ProductName;
             oldProduct.Quantity = product.Quantity;
             oldProduct.Category = product.Category;
-            await _con.SaveChangesAsync();
+             _con.SaveChangesAsync();
         }
         public async Task<int> ProductCount()
         {
