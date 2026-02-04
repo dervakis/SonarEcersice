@@ -32,7 +32,7 @@ namespace SimpleStore.Service
         }
         public async Task DeleteProduct(int id)
         {
-           await productRepository.DeleteProductAsync(id);
+           productRepository.DeleteProductAsync(id);
         }
 
         public async Task UpdateProduct(Product product)

@@ -19,7 +19,6 @@ namespace SimpleStore.Repository
         public async Task<Product> AddProductAsync(Product product)
         {
            await _con.Products.AddAsync(product);
-           await  _con.SaveChangesAsync();
             return product;
         }
 
