@@ -15,6 +15,12 @@ namespace SimpleStore.Service
             this.productRepository = productRepository;
         }
 
+//threr commet issue
+
+// public async Task<Product> CreateProduct(Product product) 
+//         {
+//             if (product.Quantity < 0)
+//                 throw new Inv
         public async Task<Product> CreateProduct(Product product) 
         {
             if (product.Quantity < 0)
